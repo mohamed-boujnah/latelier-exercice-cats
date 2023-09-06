@@ -1,0 +1,24 @@
+<div class="background">
+    <div class="container d-flex vh-100">
+        <div class="row mx-auto justify-content-center align-items-center" *ngIf="showResult">
+            <img [src]="chosenCat.url" class="img-thumbnail" />
+            <p class="result-msg">Here is the winner of the cutest cat contest 😆</p>
+            <div class="p-2 scored-image" *ngFor="let cat of cats | orderBy: 'cutness' | reverse;">
+                <figure class="figure" >
+                    <img [src]="cat.url" class="figure-img img-fluid rounded img-thumbnail" alt="A generic square placeholder image with rounded corners in a figure.">
+                    <figcaption class="figure-caption">{{cat.cutness}}</figcaption>
+                  </figure>
+            </div>
+            
+        </div>
+        
+        <div *ngIf="!showResult" class="row mx-auto justify-content-center align-items-center">
+            <div class="col col-auto">
+                <app-photo [cat]="leftCat" (click)="choseCat(leftCat, catPosition.LEFT_CAT)"></app-photo>
+            </div>
+            <div class="col col-auto">
+                <app-photo [cat]="rightCat" (click)="choseCat(rightCat, catPosition.RIGHT_CAT)"></app-photo>
+            </div>
+        </div>
+    </div>
+</div>

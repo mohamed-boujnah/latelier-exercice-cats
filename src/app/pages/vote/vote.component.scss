@@ -1,0 +1,18 @@
+.background {
+    background: linear-gradient(to left, #f7f7f7 50%, #ecf0f0 50%);
+    .img-thumbnail {
+        height: 200px;
+        width: auto;
+    }
+    .result-msg {
+        text-align: center;
+        font-weight: bold;
+    }
+    .figure {
+        display: contents;
+        width: 200px;
+    }
+    .scored-image {
+        width: auto;
+    }
+}
